@@ -1,0 +1,49 @@
+entities:
+  pizza:
+    table: gold_pizza_sales
+    grain: pizza_id
+    joins:
+      ingredient:
+        table: gold_ingredient_usage
+        on: pizza_id
+
+  ingredient:
+    table: gold_ingredient_usage
+    grain: ingredient
+
+metrics:
+  revenue:
+    sql: SUM(order_amount)
+    table: gold_pizza_sales
+
+  pizzas_sold:
+    sql: SUM(quantity)
+    table: gold_pizza_sales
+
+  ingredient_usage_grams:
+    sql: SUM(total_ingredient_grams)
+    table: gold_ingredient_usage
+
+derived_metrics:
+  revenue_per_ingredient_gram:
+    sql: revenue / ingredient_usage_grams
+
+window_patterns:
+  rank_by_time:
+    sql: RANK() OVER (PARTITION BY {time} ORDER BY {metric} DESC)
+
+trend_patterns:
+  mom_growth:
+    sql: "{metric} - LAG({metric}) OVER (PARTITION BY {entity} ORDER BY {time})"
+
+business_terms:
+  peak_month:
+    definition: "month with highest revenue"
+
+ranking:
+  highest:
+    order: DESC
+    limit: 1
+  lowest:
+    order: ASC
+    limit: 1
