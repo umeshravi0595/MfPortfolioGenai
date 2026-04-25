@@ -15,7 +15,7 @@ def get_monthly_returns(ticker: str, start_date: str = "2022-01-01") -> 'pd.Data
         ticker (str): Yahoo Finance ticker (example: TCS.NS)
         start_date (str): Start date in YYYY-MM-DD
 
-    Returns:
+    Returns:ī
         pandas.DataFrame with:
             YearMonth
             month_open
@@ -78,28 +78,6 @@ def get_multiple_stocks_monthly_returns(tickers: list, start_date="2022-01-01"):
 
     return pd.concat(all_data, ignore_index=True)
 
-tickers = ["TCS.NS", "INFY.NS", "RELIANCE.NS"]
-
-ABCAPITAL
-BHEL
-CDSL
-GOLDBEES-E
-HCLTECH
-JSL
-NAM-INDIA
-PNB
-POLYCAB
-SONACOMS
-SOUTHBANK
-SUMICHEM
-UNIONBANK
-UTIAMC
-VBL
-VINATIORGA
-
-result = get_multiple_stocks_monthly_returns(tickers)
-
-print(result)
 
 tickers = [
     "ABCAPITAL.NS",
