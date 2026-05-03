@@ -3,7 +3,7 @@ from kiteconnect import KiteConnect
 from Aiprojects.AIportfolio.zerodhaconnect.auth import KITE_API_KEY, KITE_API_SECRET
 from Aiprojects.AIportfolio.zerodhaconnect.zerodha_client import ZerodhaClient
 from Aiprojects.AIportfolio.zerodhaconnect.analytics import process_holdings
- 
+  
 
 st.set_page_config(layout="wide")
 

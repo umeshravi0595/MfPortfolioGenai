@@ -3,6 +3,7 @@ import os
 import hashlib
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 KITE_API_KEY = os.getenv("KITE_API_KEY")

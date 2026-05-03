@@ -8,7 +8,7 @@ from Aiprojects.AIportfolio.zerodhaconnect.analytics import process_holdings
 from sql_agent import SQLAgent
 from kiteconnect import KiteConnect
 from config import KITE_API_KEY, KITE_API_SECRET
- 
+  
 
 def is_token_valid():
     if "access_token" not in st.session_state:
