@@ -1,14 +1,14 @@
 import streamlit as st
 import pandas as pd
 import time
-from auth import get_login_url, generate_session
-from zerodha_client import ZerodhaClient
-from databricks_client import upload_file, trigger_job
-from analytics import process_holdings
+from Aiprojects.AIportfolio.zerodhaconnect.auth import get_login_url, generate_session
+from Aiprojects.AIportfolio.zerodhaconnect.zerodha_client import ZerodhaClient
+from Aiprojects.AIportfolio.zerodhaconnect.databricks_client import upload_file, trigger_job
+from Aiprojects.AIportfolio.zerodhaconnect.analytics import process_holdings
 from sql_agent import SQLAgent
 from kiteconnect import KiteConnect
 from config import KITE_API_KEY, KITE_API_SECRET
- 
+  
 
 def is_token_valid():
     if "access_token" not in st.session_state:

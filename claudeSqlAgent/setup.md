@@ -1,6 +1,7 @@
 # Databricks SQL Agent — Setup Guide
  
 
+
 ## Step 1 — Install dependencies (run once)
 ```bash
 pip install anthropic databricks-sql-connector gradio pandas
